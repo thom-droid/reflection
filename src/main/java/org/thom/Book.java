@@ -7,6 +7,8 @@ public class Book {
 
     private static String B = "B";
 
+    public int number = 15;
+
     private static final String C = "book";
 
     public String d = "d";

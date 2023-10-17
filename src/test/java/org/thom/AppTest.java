@@ -1,13 +1,11 @@
 package org.thom;
 
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest {
 
@@ -19,15 +17,15 @@ public class AppTest {
         // annotation scoped to MyBook
         Annotation[] annotations = MyBook.class.getAnnotations();
 
-        Arrays.stream(annotations).forEach(a -> Assert.assertTrue(a.annotationType().isAssignableFrom(BookAnnotation.class)));
+        Arrays.stream(annotations).forEach(a -> assertTrue(a.annotationType().isAssignableFrom(BookAnnotation.class)));
 
         String value = "une belle ami";
         int num = 2;
 
         BookAnnotation bookAnnotation = MyBook.class.getAnnotation(BookAnnotation.class);
 
-        Assert.assertEquals(value, bookAnnotation.value());
-        Assert.assertEquals(num, bookAnnotation.number());
+        assertEquals(value, bookAnnotation.value());
+        assertEquals(num, bookAnnotation.number());
 
     }
 
