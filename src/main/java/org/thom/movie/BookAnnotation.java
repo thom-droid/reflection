@@ -1,4 +1,4 @@
-package org.thom;
+package org.thom.movie;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

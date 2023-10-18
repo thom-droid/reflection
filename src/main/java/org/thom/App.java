@@ -1,5 +1,7 @@
 package org.thom;
 
+import org.thom.movie.Book;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -26,6 +28,6 @@ public class App {
 //
 //        Class<? extends Book> aClass = book.getClass();
 //        Class<?> aClass1 = Class.
-//                forName("org.thom.Book");
+//                forName("org.thom.movie.Book");
     }
 }

@@ -1,4 +1,4 @@
-package org.thom;
+package org.thom.movie;
 
 @BookAnnotation(value = "cure", isSuper = true, number = 1)
 public class Book {

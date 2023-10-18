@@ -2,6 +2,9 @@ package org.thom;
 
 
 import org.junit.jupiter.api.Test;
+import org.thom.movie.BookAnnotation;
+import org.thom.movie.MyBook;
+
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 

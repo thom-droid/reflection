@@ -1,6 +1,7 @@
 package org.thom;
 
 import org.junit.jupiter.api.Test;
+import org.thom.movie.Book;
 import org.thom.movie.Movie;
 
 import java.lang.reflect.*;
@@ -12,7 +13,7 @@ public class MovieAppTest {
     @Test
     public void reflectionTest() throws Exception {
 
-        Class<?> bookClass = Class.forName("org.thom.Book");
+        Class<?> bookClass = Class.forName("org.thom.movie.Book");
         Constructor<?> bookClassConstructor = bookClass.getConstructor(String.class, String.class, String.class);
         Book book = (Book) bookClassConstructor.newInstance("name1", "name2", "name3");
 
