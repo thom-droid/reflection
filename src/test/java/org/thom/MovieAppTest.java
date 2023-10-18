@@ -1,13 +1,11 @@
 package org.thom;
 
 import org.junit.jupiter.api.Test;
+import org.thom.movie.Movie;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MovieAppTest {
 
@@ -50,6 +48,22 @@ public class MovieAppTest {
         o3 = (Integer) number.get(book);
 
         assertNotEquals(o3, o4);
+
+    }
+
+    @Test
+    public void methodInvocation() throws Exception {
+        Movie movie = new Movie();
+        Method printMovieName = Movie.class.getDeclaredMethod("sum", int.class, int.class);
+        printMovieName.setAccessible(true);
+
+        int resultBeforeReflection = movie.sum(15, 10);
+
+        assertEquals(resultBeforeReflection, 25);
+
+        Integer resultAfter = (Integer) printMovieName.invoke(movie, 25, 10);
+
+        assertEquals(resultAfter, 35);
 
     }
 
