@@ -1,8 +1,6 @@
 package org.thom.ioc;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.thom.movie.Book;
 
 import java.lang.reflect.Field;
 
@@ -51,6 +49,20 @@ class ContainerServiceTest {
             assertNotNull(bookService.bookRepository);
             assertEquals("name", bookService.printOther());
         }
+    }
+
+    @Test
+    public void containerInjects() {
+
+        BookService injectedBookService = ContainerService.getInjectedInstance(BookService.class);
+
+        BookRepository bookRepository = ContainerService.getObject(BookRepository.class);
+
+        assertNotNull(injectedBookService);
+        assertNotNull(injectedBookService.bookRepository);
+        assertEquals(injectedBookService.bookRepository.name, bookRepository.name);
+        assertNotEquals(injectedBookService.bookRepository, bookRepository);
+
     }
 
 
