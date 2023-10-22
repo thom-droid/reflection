@@ -52,7 +52,7 @@ class ContainerServiceTest {
     }
 
     @Test
-    public void containerInjects() {
+    public void containerInjects() throws ClassNotFoundException {
 
         BookService injectedBookService = ContainerService.getInjectedInstance(BookService.class);
 

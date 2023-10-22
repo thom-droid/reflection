@@ -1,5 +1,7 @@
 package org.thom.ioc;
 
+import org.thom.movie.Book;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
@@ -22,7 +24,6 @@ public class ContainerService {
 
     public static <T> T getInjectedInstance(Class<T> tClass) {
         T newInstance = getNewInstance(tClass);
-
         Arrays.stream(tClass.getDeclaredFields()).forEach(f -> {
             if (f.getAnnotation(Inject.class) != null) {
                 Object field = getNewInstance(f.getType());

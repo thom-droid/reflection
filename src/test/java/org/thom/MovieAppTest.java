@@ -34,7 +34,6 @@ public class MovieAppTest {
 
         assertEquals(o1, o2);
 
-
         Field number = Book.class.getDeclaredField("number");
 
         checkModifier(number);
